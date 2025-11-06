@@ -40,7 +40,11 @@ function App() {
   };
 
   const handleCheckout = async (formData) => {
-    const res = await api.post("/checkout", { cartItems: cart });
+    const res = await api.post("/checkout", {
+  cartItems: cart,
+  name: formData.name,
+  email: formData.email,
+});
     setReceipt({
       ...res.data.receipt,
       name: formData.name,
