@@ -136,7 +136,7 @@ MONGODB_URI=mongodb+srv://<username>:<password>@<cluster>.mongodb.net/mock_ecom?
 ---
 
 ## 🎥 Demo
-👉 Add your Loom or YouTube link here.
+👉 [Loom Demo](https://www.loom.com/share/5e647644727b4db397d7491ca0558ef7)
 
 ---
 
