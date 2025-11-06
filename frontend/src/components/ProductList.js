@@ -1,15 +1,16 @@
 function ProductList({ products, addToCart }) {
     return (
-        <div>
+        <div className="card">
             <h2>Products</h2>
-            {products.map(p => (
-                <div key={p.id} style={{ margin: "8px 0" }}>
-                    {p.name} – ₹{p.price}
-                    <button onClick={() => addToCart(p.id)} style={{ marginLeft: 10 }}>
-                        Add
-                    </button>
-                </div>
-            ))}
+            <div className="product-grid">
+                {products.map((p) => (
+                    <div key={p.id} className="product">
+                        <h4>{p.name}</h4>
+                        <p>₹{p.price}</p>
+                        <button onClick={() => addToCart(p.id)}>Add to Cart</button>
+                    </div>
+                ))}
+            </div>
         </div>
     );
 }

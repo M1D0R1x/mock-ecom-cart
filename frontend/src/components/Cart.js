@@ -1,20 +1,25 @@
-function Cart({ cart, total, removeFromCart }) {
+function Cart({ cart, total, removeFromCart, onCheckout }) {
     return (
-        <div style={{ marginTop: 20 }}>
+        <div className="card">
             <h2>Cart</h2>
             {cart.length === 0 ? (
-                <p>Empty</p>
+                <p>No items in cart.</p>
             ) : (
-                cart.map((item, i) => (
-                    <div key={i}>
-                        {item.name} x {item.qty} – ₹{item.price * item.qty}
-                        <button onClick={() => removeFromCart(item._id)} style={{ marginLeft: 10 }}>
-                            Remove
-                        </button>
-                    </div>
-                ))
+                <>
+                    {cart.map((item, i) => (
+                        <div key={i} className="cart-item">
+                            <span>{item.name}</span>
+                            <span>₹{item.price}</span>
+                            <span>x{item.qty}</span>
+                            <button onClick={() => removeFromCart(item._id)}>🗑️</button>
+                        </div>
+                    ))}
+                    <h3>Total: ₹{total}</h3>
+                    <button className="checkout-btn" onClick={onCheckout}>
+                        Proceed to Checkout
+                    </button>
+                </>
             )}
-            <h3>Total: ₹{total}</h3>
         </div>
     );
 }
