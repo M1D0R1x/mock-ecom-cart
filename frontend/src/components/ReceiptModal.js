@@ -1,3 +1,5 @@
+import React from "react";
+
 function ReceiptModal({ receipt, onClose }) {
     return (
         <div className="modal">
@@ -6,10 +8,11 @@ function ReceiptModal({ receipt, onClose }) {
                 <p><strong>Name:</strong> {receipt.name}</p>
                 <p><strong>Email:</strong> {receipt.email}</p>
                 <p><strong>Total:</strong> ₹{receipt.total}</p>
-                <p><strong>Timestamp:</strong> {new Date(receipt.timestamp).toLocaleString()}</p>
+                <p><strong>Date:</strong> {new Date(receipt.timestamp).toLocaleString()}</p>
                 <button onClick={onClose}>Close</button>
             </div>
         </div>
     );
 }
+
 export default ReceiptModal;

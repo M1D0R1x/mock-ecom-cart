@@ -18,22 +18,23 @@ function CheckoutForm({ onSubmit, onCancel }) {
                 <h2>Checkout</h2>
                 <form onSubmit={handleSubmit}>
                     <input
+                        type="text"
                         name="name"
-                        placeholder="Name"
+                        placeholder="Full Name"
                         value={formData.name}
                         onChange={handleChange}
                         required
                     />
                     <input
-                        name="email"
                         type="email"
-                        placeholder="Email"
+                        name="email"
+                        placeholder="Email Address"
                         value={formData.email}
                         onChange={handleChange}
                         required
                     />
                     <div className="modal-actions">
-                        <button type="submit">Submit</button>
+                        <button type="submit">Confirm</button>
                         <button type="button" onClick={onCancel}>
                             Cancel
                         </button>

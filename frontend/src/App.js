@@ -52,7 +52,7 @@ function App() {
 
   return (
       <div className="container">
-        <h1 className="title">🛒 Vibe Commerce</h1>
+        <h1 className="title">🛍️ Vibe Commerce</h1>
 
         <div className="grid">
           <ProductList products={products} addToCart={addToCart} />

@@ -1,3 +1,5 @@
+import React from "react";
+
 function ProductList({ products, addToCart }) {
     return (
         <div className="card">
@@ -5,6 +7,11 @@ function ProductList({ products, addToCart }) {
             <div className="product-grid">
                 {products.map((p) => (
                     <div key={p.id} className="product">
+                        <img
+                            src={`https://via.placeholder.com/150?text=${p.name}`}
+                            alt={p.name}
+                            className="product-img"
+                        />
                         <h4>{p.name}</h4>
                         <p>₹{p.price}</p>
                         <button onClick={() => addToCart(p.id)}>Add to Cart</button>
@@ -14,4 +21,5 @@ function ProductList({ products, addToCart }) {
         </div>
     );
 }
+
 export default ProductList;
